@@ -78,21 +78,28 @@ function save($table = null, $data = null) {
   $columns = null;
   $values = null;
 
-  //print_r($data);
+  // print_r($table);
+  // print_r($data);
 
   foreach ($data as $key => $value) {
     $columns .= trim($key, "'") . ",";
     $values .= "'$value',";
   }
+  //print_r($columns);
+  //print_r($values);
 
   // remove a ultima virgula
   $columns = rtrim($columns, ',');
   $values = rtrim($values, ',');
+
+  // print_r($columns);
+  // print_r($values);
   
-  $sql = "INSERT INTO " . $table . "($columns)" . " VALUES " . "($values);";
+  $sql = 'INSERT INTO '.$table.' ('.$columns.')'.' VALUES '. '(' . '$values' . ')';
 
   try {
     $database->query($sql);
+    print_r($sql);
 
     $_SESSION['message'] = 'Registro cadastrado com sucesso.';
     $_SESSION['type'] = 'success';
@@ -102,7 +109,6 @@ function save($table = null, $data = null) {
     $_SESSION['message'] = 'Nao foi possivel realizar a operacao.';
     $_SESSION['type'] = 'danger';
   } 
-
   close_database($database);
 }
 

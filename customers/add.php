@@ -7,7 +7,7 @@
 
 <h2>Novo Cliente</h2>
 
-<form action="add.php" method="post">
+<form action="add.php" method="POST">
   <!-- area de campos do form -->
   <hr />
   <div class="row">
@@ -89,4 +89,10 @@
   </div>
 </form>
 
-<?php include(FOOTER_TEMPLATE); ?>
+
+  
+
+<?php 
+//print_r($customer);
+include(FOOTER_TEMPLATE); 
+?>

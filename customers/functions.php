@@ -1,6 +1,8 @@
 <?php		
+
 require_once('../config.php');	
 require_once(DBAPI);		
+// require_once('../inc/database.php');
 $customers = null;	
 $customer = null;		
 
@@ -25,6 +27,7 @@ function add() {
     
     save('customers', $customer);
     header('location: index.php');
+    //print_r($customer);
   }
 }
 
