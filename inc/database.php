@@ -78,8 +78,8 @@ function save($table = null, $data = null) {
   $columns = null;
   $values = null;
 
-  // print_r($table);
-  // print_r($data);
+  //print_r($table);
+  //print_r($data);
 
   foreach ($data as $key => $value) {
     $columns .= trim($key, "'") . ",";
@@ -92,14 +92,15 @@ function save($table = null, $data = null) {
   $columns = rtrim($columns, ',');
   $values = rtrim($values, ',');
 
-  // print_r($columns);
-  // print_r($values);
+  //print_r($columns);
+  //print_r($values);
   
-  $sql = 'INSERT INTO '.$table.' ('.$columns.')'.' VALUES '. '(' . '$values' . ')';
+  $sql = 'INSERT INTO ' . $table . '(' .$columns. ')' . ' VALUES '. '(' . "$values" .')';
 
   try {
     $database->query($sql);
-    print_r($sql);
+    //var_dump($sql);
+    //print_r($sql);
 
     $_SESSION['message'] = 'Registro cadastrado com sucesso.';
     $_SESSION['type'] = 'success';
@@ -132,9 +133,10 @@ function update($table = null, $id = 0, $data = null) {
   $sql .= " SET $items";
   $sql .= " WHERE id=" . $id . ";";
 
+  
   try {
     $database->query($sql);
-
+    
     $_SESSION['message'] = 'Registro atualizado com sucesso.';
     $_SESSION['type'] = 'success';
 
