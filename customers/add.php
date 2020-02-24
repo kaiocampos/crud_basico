@@ -54,6 +54,11 @@
       <label for="campo1">Município</label>
       <input type="text" class="form-control" name="customer['city']">
     </div>
+   
+    <div class="form-group col-md-1">
+      <label for="campo3">UF</label>
+      <input type="text" class="form-control" name="customer['state']">
+    </div>
     
     <div class="form-group col-md-2">
       <label for="campo2">Telefone</label>
@@ -63,13 +68,8 @@
     <div class="form-group col-md-2">
       <label for="campo3">Celular</label>
       <input type="text" class="form-control" name="customer['mobile']">
-    </div>
-    
-    <div class="form-group col-md-1">
-      <label for="campo3">UF</label>
-      <input type="text" class="form-control" name="customer['state']">
-    </div>
-    
+    </div> 
+       
     <div class="form-group col-md-2">
       <label for="campo3">Inscrição Estadual</label>
       <input type="text" class="form-control" name="customer['ie']">
@@ -93,6 +93,5 @@
   
 
 <?php 
-//print_r($customer);
 include(FOOTER_TEMPLATE); 
 ?>
